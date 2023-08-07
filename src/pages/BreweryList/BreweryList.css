@@ -1,0 +1,51 @@
+.main-heading {
+  color: #362912;
+  font-size: 5rem;
+  padding-top: 1rem;
+}
+
+.main-container {
+  color: white;
+}
+
+.list-container {
+  display: flex;
+  padding: 1rem;
+  border-top: 1rem double goldenrod;
+}
+
+.item-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+  background-color: #1e1d1b;
+}
+
+.item-name {
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 1rem 1rem 0;
+}
+
+.list-container {
+  background-color: #eac696;
+
+  padding: 4rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100vw;
+  margin: auto;
+  gap: 5rem;
+  z-index: -1;
+}
+
+.list-container input {
+  width: fit-content;
+}
+
+.jump-page {
+  width: 40px;
+}

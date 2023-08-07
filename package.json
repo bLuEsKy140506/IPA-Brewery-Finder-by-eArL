@@ -1,0 +1,35 @@
+{
+  "name": "refocus-brewery-finder-app-by-butlay-earl",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "server": "npx json-server --watch db.json --delay 500",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@react-google-maps/api": "^2.19.2",
+    "@reduxjs/toolkit": "^1.9.5",
+    "api": "^6.1.0",
+    "axios": "^1.4.0",
+    "google": "^2.1.0",
+    "maps": "^0.3.3",
+    "moment": "^2.29.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.10.1",
+    "react-paginate": "^8.2.0",
+    "react-redux": "^8.1.1",
+    "react-router": "^6.11.1",
+    "react-router-dom": "^6.11.1",
+    "redux": "^4.2.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^3.1.0",
+    "vite": "^4.2.0"
+  }
+}
