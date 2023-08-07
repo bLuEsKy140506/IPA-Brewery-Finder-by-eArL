@@ -1,42 +1,21 @@
-# HA-FoodMagazine-GITFLOW
+# IPA-6 🔍Brewery Finder
 
-You and your friend want to share recipes with your audience. To do that,
-you decide to develop a food magazine app with two types of pages: a main
-page with a list of recipes and a recipe page.
-Go through the development process and take screenshots for each of the
-following versions:
+<h2>Goal</h2>
+<pre>
 
-To run this app, you will use to separated terminals.
+> Imagine you are now a developer of a web solutions company. As your first project, your client wants you to develop a web application that helps users find brewery locations in their city. This web app should have precise mapping and a wishlist that allows users to save breweries for later. It should also be integrated with Gitflow so it is easier to manage in the future.
+> The client has a tight budget and doesn’t have a designer. So the design is up
+> to you.</pre>
 
-1. for initial and future installation
-   > npm install
-2. for back-end
-   > npm run server
-3. for front-end
-   > npm run dev
+<h2>Requirements</h2>
+The web application should contain three pages.
+<p></p>
+<p>Breweries list:</p> <pre>A list of breweries with the possibility to filter them.</pre>
+<p>Brewery details:</p> <pre>This page is shown when a user clicks on a brewery
+on the breweries list page. On this page, there should be a map integrated
+with Google showing the brewery’s location. It should be represented
+as a pinned location based on the latitude and longitude.</pre>
 
-<h2>Version 1.0: Backbone structure of the App</h2>
-
-workable setup for data movement from back-end to the front-end
-
-<h2>Version 1.1: Design the website</h2>
-
-initial-design commits
-
- <li>feature-recipe-detail</li>
- <li>feature-recipe-create</li>
- <li>feature-recipe-edit</li>
-<br>
-Release version 1.1. To do this, type “git flow release finish '1.1'” with the name
-tag 1.1 and merge it with the development branch. Include the release information when merging.
-
-<h2>Version 1.2: Implement functions to add, edit, and delete recipes</h2>
-
-Develop functions for adding, removing, and editing a food recipe.
-To develop these functions, you can create an array that contains objects. Each object should have a recipe name, a category, and an array with ngredients. The ingredients array should contain objects, and each object should consist of an ingredient name and a measurement.
-
-<h2>Version 1.3: Implement filter and search functions</h2>
-
-Add filter and search functions for the list of recipes. Create a new feature
-named “search-filter-functions” and develop the functions in this branch.
-To develop these functions, use appropriate array methods.
+<p>Wishlist:</p> <pre>On the breweries list and brewery details pages, a user can add
+a brewery to their wishlist. The marked breweries should be shown on this
+page</pre>
