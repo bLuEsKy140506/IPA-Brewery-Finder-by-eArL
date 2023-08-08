@@ -31,3 +31,11 @@ three versions of the app in this project.</p>
 > ✅ search, which filters the list depending on the keyword
 
 > ✅ initial-design, which creates the initial web app design
+
+<h3>Prepare version 1.1 with the following features:</h3>
+
+> ✅ view-brewery, which shows the brewery details page
+
+> ✅ brewery-mapping, which integrates Google Maps into the brewery details page
+
+> ✅ initial-design2, which creates the initial web app design
