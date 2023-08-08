@@ -2,17 +2,44 @@ import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+import SearchBox from "../../components/search-box/search-box.component";
+
 import "./BreweryList.css";
 
 export default function BreweryList() {
   const [breweryList, setBreweryList] = useState([]);
+  const [breweryListsearch, setBreweryListsearch] = useState([]);
   const [page, setPage] = useState(1);
+  const [searchField, setSearchField] = useState("");
+
   const [totalPage, setTotalPage] = useState(1);
 
   useEffect(() => {
-    axios.get(`https://api.openbrewerydb.org/v1/breweries/meta`).then((res) => {
-      setTotalPage(Math.ceil(res.data.total / 12));
-    });
+    axios
+      .get(
+        `https://api.openbrewerydb.org/v1/breweries/search?query=${searchField}`
+      )
+      .then((res) => {
+        setTotalPage(Math.ceil(res.data.length / 10));
+      });
+
+    axios
+      .get(
+        `https://api.openbrewerydb.org/v1/breweries/search?query=${searchField}&page=${page}&per_page=10`
+      )
+      .then((res) => {
+        setBreweryListsearch(res.data);
+      });
+  }, [page, searchField]);
+
+  useEffect(() => {
+    if (searchField === "") {
+      axios
+        .get(`https://api.openbrewerydb.org/v1/breweries/meta`)
+        .then((res) => {
+          setTotalPage(Math.ceil(res.data.total / 12));
+        });
+    }
     axios
       .get(
         `https://api.openbrewerydb.org/v1/breweries?page=${page}&per_page=12`
@@ -20,23 +47,44 @@ export default function BreweryList() {
       .then((res) => {
         setBreweryList(res.data);
       });
-  }, [page]);
+  }, [page, searchField]);
+
+  const onSearchChange = (event) => {
+    const searchFieldString = event.target.value.toLocaleLowerCase();
+    setSearchField(searchFieldString);
+    setPage(1);
+  };
 
   return (
     <>
       <div className="main-container">
         <h1 className="main-heading">Brewery Finder App</h1>
-
+        <SearchBox
+          className="search-box"
+          onChangeHandler={onSearchChange}
+          placeholder="search brewery name"
+        />
         <div className="list-container">
-          {breweryList.map((item) => (
-            <div className="item-container" key={item.id}>
-              <Link to={`/brewery/${item.id}`}>
-                <p className="item-name" value={item.brewery_type}>
-                  {item.name}
-                </p>
-              </Link>
-            </div>
-          ))}
+          {searchField === "" &&
+            breweryList.map((item) => (
+              <div className="item-container" key={item.id}>
+                <Link to={`/brewery/${item.id}`}>
+                  <p className="item-name badge2" value={item.brewery_type}>
+                    {item.name}
+                  </p>
+                </Link>
+              </div>
+            ))}
+          {searchField !== "" &&
+            breweryListsearch.map((item) => (
+              <div className="item-container" key={item.id}>
+                <Link to={`/brewery/${item.id}`}>
+                  <p className="item-name badge2" value={item.brewery_type}>
+                    {item.name}
+                  </p>
+                </Link>
+              </div>
+            ))}
         </div>
         <div className="api-pagination">
           <button
