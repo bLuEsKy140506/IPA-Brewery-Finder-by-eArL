@@ -10,6 +10,7 @@ import BreweryList from "../pages/BreweryList/BreweryList";
 import BreweryDetail, {
   breweryDetail,
 } from "../pages/BreweryDetails/BreweryDetail";
+import WishList from "../pages/WishListBrewery/WishList";
 import NotFound from "../pages/NotFound/NotFound";
 
 export const router = createBrowserRouter(
@@ -21,6 +22,7 @@ export const router = createBrowserRouter(
         element={<BreweryDetail />}
         loader={breweryDetail}
       />
+      <Route path="brewery/wishlist" element={<WishList />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )

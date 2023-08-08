@@ -6,6 +6,7 @@ import "./BreweryDetail.css";
 
 export default function BreweryDetail() {
   const breweryDetails = useLoaderData();
+
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: "AIzaSyAOsq2FkcHvMEoyIwcHyvLLjvMFphVK2QQ",
@@ -37,7 +38,7 @@ export default function BreweryDetail() {
 
   return (
     <>
-      <div className="details-main-container">
+      <div className="details-main-container" key={breweryDetails.id}>
         <div className="badge-container">
           <h2 className="item-title badge" value={breweryDetails.brewery_type}>
             {breweryDetails.name}

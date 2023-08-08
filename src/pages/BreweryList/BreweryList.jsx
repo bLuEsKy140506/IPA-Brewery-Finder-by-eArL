@@ -1,6 +1,13 @@
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+
+import {
+  addBrewery,
+  deleteBrewery,
+  fetchBrewery,
+} from "../../store/reducers/brewery";
 
 import SearchBox from "../../components/search-box/search-box.component";
 
@@ -13,6 +20,10 @@ export default function BreweryList() {
   const [searchField, setSearchField] = useState("");
 
   const [totalPage, setTotalPage] = useState(1);
+
+  const wishList = useSelector((state) => state.brewery);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     axios
@@ -49,25 +60,40 @@ export default function BreweryList() {
       });
   }, [page, searchField]);
 
+  useEffect(() => {
+    dispatch(fetchBrewery());
+  }, []);
+
   const onSearchChange = (event) => {
     const searchFieldString = event.target.value.toLocaleLowerCase();
     setSearchField(searchFieldString);
     setPage(1);
   };
 
+  const onClickAdd = (item) => {
+    console.log(item);
+    dispatch(addBrewery(item));
+  };
+
+  const onClickDelete = (item) => {
+    dispatch(deleteBrewery(item.id));
+  };
+
   return (
     <>
       <div className="main-container">
-        <h1 className="main-heading">Brewery Finder App</h1>
+        <h1 className="main-heading">🔎Brewery Finder App</h1>
         <SearchBox
           className="search-box"
           onChangeHandler={onSearchChange}
           placeholder="search brewery name"
         />
+
         <div className="list-container">
           {searchField === "" &&
             breweryList.map((item) => (
               <div className="item-container" key={item.id}>
+                {/* <img src={bg} alt="background" className="bg-img" />{" "} */}
                 <Link to={`/brewery/${item.id}`}>
                   <p className="item-name badge2" value={item.brewery_type}>
                     {item.name}
@@ -78,8 +104,13 @@ export default function BreweryList() {
           {searchField !== "" &&
             breweryListsearch.map((item) => (
               <div className="item-container" key={item.id}>
+                {/* <img src={bg} alt="background" className="bg-img" />{" "} */}
                 <Link to={`/brewery/${item.id}`}>
-                  <p className="item-name badge2" value={item.brewery_type}>
+                  <p
+                    className="item-name badge2"
+                    value={item.brewery_type}
+                    key={item.id}
+                  >
                     {item.name}
                   </p>
                 </Link>

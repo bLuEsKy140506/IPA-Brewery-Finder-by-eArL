@@ -1,3 +1,58 @@
 {
-  "brewery": []
+  "brewery": [
+    {
+      "id": "6d14b220-8926-4521-8d19-b98a2d6ec3db",
+      "name": "10 Barrel Brewing Co",
+      "brewery_type": "large",
+      "address_1": "62970 18th St",
+      "address_2": null,
+      "address_3": null,
+      "city": "Bend",
+      "state_province": "Oregon",
+      "postal_code": "97701-9847",
+      "country": "United States",
+      "longitude": "-121.281706",
+      "latitude": "44.08683531",
+      "phone": "5415851007",
+      "website_url": "http://www.10barrel.com",
+      "state": "Oregon",
+      "street": "62970 18th St"
+    },
+    {
+      "id": "9c5a66c8-cc13-416f-a5d9-0a769c87d318",
+      "name": "(512) Brewing Co",
+      "brewery_type": "micro",
+      "address_1": "407 Radam Ln Ste F200",
+      "address_2": null,
+      "address_3": null,
+      "city": "Austin",
+      "state_province": "Texas",
+      "postal_code": "78745-1197",
+      "country": "United States",
+      "longitude": null,
+      "latitude": null,
+      "phone": "5129211545",
+      "website_url": "http://www.512brewing.com",
+      "state": "Texas",
+      "street": "407 Radam Ln Ste F200"
+    },
+    {
+      "id": "03118499-a3d0-4c22-860d-4529509ae095",
+      "name": "101 Brewery",
+      "brewery_type": "brewpub",
+      "address_1": "294793 US Highway 101",
+      "address_2": null,
+      "address_3": null,
+      "city": "Quilcene",
+      "state_province": "Washington",
+      "postal_code": "98376-9000",
+      "country": "United States",
+      "longitude": "-122.8755823",
+      "latitude": "47.82347577",
+      "phone": "3607656485",
+      "website_url": "http://www.101brewery.com",
+      "state": "Washington",
+      "street": "294793 US Highway 101"
+    }
+  ]
 }
