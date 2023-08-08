@@ -19,3 +19,15 @@ as a pinned location based on the latitude and longitude.</pre>
 <p>Wishlist:</p> <pre>On the breweries list and brewery details pages, a user can add
 a brewery to their wishlist. The marked breweries should be shown on this
 page</pre>
+
+<h2>Develop the app</h2>
+<p>
+Initialize Gitflow. It will help you manage the project in the future and prepare
+three versions of the app in this project.</p>
+<h3>Prepare version 1.0 with the following features:</h3>
+
+> ✅ brewery-list, which shows breweries
+
+> ✅ search, which filters the list depending on the keyword
+
+> ✅ initial-design, which creates the initial web app design
