@@ -1,0 +1,58 @@
+/* .details-main-container {
+} */
+
+.description-brewery {
+  display: flex;
+  flex-direction: column;
+  font-style: italic;
+  font-weight: 700;
+  padding: 2rem 0;
+}
+
+.website-url {
+  color: #362912;
+}
+
+.website-url-gohere {
+  display: block;
+  color: #362912;
+  margin: 2rem 0;
+  font-weight: 800;
+  background-color: burlywood;
+}
+
+.website-url:hover,
+.website-url-gohere:hover {
+  color: black;
+  border-bottom: 3px solid goldenrod;
+}
+
+.badge-container {
+  position: relative;
+  width: fit-content;
+  display: block;
+  margin: 3rem auto;
+  color: black;
+}
+
+.badge-container p {
+  color: black;
+  font-size: 1.2rem;
+}
+
+.badge:after {
+  content: attr(value);
+  font-size: 12px;
+  background: brown;
+  border-radius: 30px;
+  padding: 3px;
+  position: absolute;
+  right: -60px;
+  top: 0px;
+  opacity: 0.9;
+  color: white;
+}
+
+.sm-description {
+  color: white;
+}

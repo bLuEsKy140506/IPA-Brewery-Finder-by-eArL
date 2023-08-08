@@ -2,6 +2,8 @@ import { useLoaderData } from "react-router-dom";
 import { useState, useCallback } from "react";
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 
+import "./BreweryDetail.css";
+
 export default function BreweryDetail() {
   const breweryDetails = useLoaderData();
   const { isLoaded } = useJsApiLoader({
