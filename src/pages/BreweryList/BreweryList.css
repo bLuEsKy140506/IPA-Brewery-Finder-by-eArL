@@ -21,6 +21,11 @@
 
   justify-content: space-between;
   background-color: #1e1d1b;
+
+  width: 280px;
+  height: 110px;
+
+  z-index: 0;
 }
 
 .item-name {
@@ -48,4 +53,42 @@
 
 .jump-page {
   width: 40px;
+}
+
+.api-pagination {
+  padding: 2rem 0;
+  color: #1e1d1b;
+
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.api-pagination {
+  padding: 2rem 0;
+  color: #1e1d1b;
+
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.api-pagination button {
+  padding: 5px;
+  background-color: #cc9934;
+  color: #1e1d1b;
+}
+
+.badge2:after {
+  content: attr(value);
+  font-size: 12px;
+  background: goldenrod;
+  border-radius: 30px;
+  padding: 0 3px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  opacity: 0.9;
+  color: black;
+  z-index: 5;
 }
