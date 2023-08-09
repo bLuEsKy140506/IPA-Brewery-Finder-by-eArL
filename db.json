@@ -73,24 +73,6 @@
       "street": "823 E Hamilton St"
     },
     {
-      "id": "895ddfb0-8827-49d4-914e-c289559e854d",
-      "name": "Tribute Brewing Co",
-      "brewery_type": "micro",
-      "address_1": "1106 N Bluebird Rd",
-      "address_2": null,
-      "address_3": null,
-      "city": "Eagle River",
-      "state_province": "Wisconsin",
-      "postal_code": "54521-7557",
-      "country": "United States",
-      "longitude": "-89.2579185",
-      "latitude": "45.92935062",
-      "phone": "7154802337",
-      "website_url": "http://www.tributebrewing.com",
-      "state": "Wisconsin",
-      "street": "1106 N Bluebird Rd"
-    },
-    {
       "id": "52a1d246-495c-4d4a-9166-5fed18ae10f0",
       "name": "Odd Man Rush",
       "brewery_type": "micro",
@@ -269,6 +251,42 @@
       "website_url": "http://www.samueladams.com",
       "state": "Ohio",
       "street": "1625 Central Pkwy"
+    },
+    {
+      "id": "581a681e-b5e8-4595-8cc6-f579304f804e",
+      "name": "Parched Eagle Brewpub",
+      "brewery_type": "brewpub",
+      "address_1": "5440 Willow Rd Ste 112",
+      "address_2": null,
+      "address_3": null,
+      "city": "Waunakee",
+      "state_province": "Wisconsin",
+      "postal_code": "53597-8431",
+      "country": "United States",
+      "longitude": null,
+      "latitude": null,
+      "phone": "6082049192",
+      "website_url": "http://www.parchedeaglebrewpub.com",
+      "state": "Wisconsin",
+      "street": "5440 Willow Rd Ste 112"
+    },
+    {
+      "id": "f3cd9907-119e-4d36-82f3-64cceb23c7e0",
+      "name": "Bonfire Brewing",
+      "brewery_type": "micro",
+      "address_1": "127 W 2nd St",
+      "address_2": null,
+      "address_3": null,
+      "city": "Eagle",
+      "state_province": "Colorado",
+      "postal_code": "81631",
+      "country": "United States",
+      "longitude": "-106.82826",
+      "latitude": "39.65531966",
+      "phone": "9703067113",
+      "website_url": "http://www.bonfirebrewing.com",
+      "state": "Colorado",
+      "street": "127 W 2nd St"
     }
   ]
 }
