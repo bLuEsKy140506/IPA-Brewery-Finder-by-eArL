@@ -71,7 +71,7 @@ export default function BreweryList() {
   };
 
   const onClickAdd = (item) => {
-    console.log(item);
+    // console.log(item);
     dispatch(addBrewery(item));
   };
 
@@ -93,7 +93,6 @@ export default function BreweryList() {
           {searchField === "" &&
             breweryList.map((item) => (
               <div className="item-container" key={item.id}>
-                {/* <img src={bg} alt="background" className="bg-img" />{" "} */}
                 <Link to={`/brewery/${item.id}`}>
                   <p className="item-name badge2" value={item.brewery_type}>
                     {item.name}
@@ -129,7 +128,6 @@ export default function BreweryList() {
           {searchField !== "" &&
             breweryListsearch.map((item) => (
               <div className="item-container" key={item.id}>
-                {/* <img src={bg} alt="background" className="bg-img" />{" "} */}
                 <Link to={`/brewery/${item.id}`}>
                   <p
                     className="item-name badge2"

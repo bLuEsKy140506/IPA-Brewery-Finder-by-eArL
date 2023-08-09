@@ -80,11 +80,21 @@ export default function BreweryDetail() {
             </a>
           </p>
         </div>
-        <iframe
-          src={breweryDetails.website_url}
-          height="550"
-          width="355px"
-        ></iframe>
+        {breweryDetails.website_url !== null ? (
+          <iframe
+            src={breweryDetails.website_url}
+            height="550"
+            width="355px"
+          ></iframe>
+        ) : (
+          <div
+            style={{
+              fontStyle: "italic",
+            }}
+          >
+            THIS BREWERY STORE HAS NO WEBSITE OR ONLINE LINK
+          </div>
+        )}
 
         {wishList.some((el) => el.id === breweryDetails.id) ? (
           <div className="item-description badge-container">

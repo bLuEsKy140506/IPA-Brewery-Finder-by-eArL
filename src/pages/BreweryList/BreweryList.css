@@ -41,6 +41,16 @@
     rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
+.item-container:hover {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  transform: scale(1.03);
+  transition: all 0.3s ease;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(255, 217, 0, 0.493) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
 .item-name {
   font-size: 2rem;
   font-weight: 500;

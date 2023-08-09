@@ -5,6 +5,8 @@ import { deleteBrewery, fetchBrewery } from "../../store/reducers/brewery";
 
 import PaginatedItems from "../../components/pagination/Pagination";
 
+import "./WishList.css";
+
 export default function WishList() {
   const wishList = useSelector((state) => state.brewery);
   const dispatch = useDispatch();
@@ -26,6 +28,10 @@ export default function WishList() {
 
 export function Items({ currentItems }) {
   const dispatch = useDispatch();
+
+  const onClickDelete = (item) => {
+    dispatch(deleteBrewery(item.id));
+  };
 
   return (
     <>
