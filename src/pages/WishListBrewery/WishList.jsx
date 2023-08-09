@@ -14,7 +14,11 @@ export default function WishList() {
 
   return (
     <>
+      <Link to={`/`} className="link-back">
+        <p>👈 Back to Brewery List</p>
+      </Link>
       <h2 className="wish-heading">My Wishlist 🍻</h2>
+
       <PaginatedItems itemsPerPage={12} arrayObject={wishList} />
     </>
   );

@@ -99,6 +99,31 @@ export default function BreweryList() {
                     {item.name}
                   </p>
                 </Link>
+                {wishList.some((el) => el.id === item.id) ? (
+                  <div className="item-description">
+                    <p className="sm-description">This was been added</p>
+                    <button
+                      className="btn-delete"
+                      onClick={() => {
+                        onClickDelete(item);
+                      }}
+                    >
+                      Delete from Wishlist
+                    </button>
+                  </div>
+                ) : (
+                  <div className="item-description">
+                    <p className="sm-description">Not yet added</p>
+                    <button
+                      className="btn-add"
+                      onClick={() => {
+                        onClickAdd(item);
+                      }}
+                    >
+                      Add to Wishlist
+                    </button>
+                  </div>
+                )}
               </div>
             ))}
           {searchField !== "" &&
@@ -114,6 +139,31 @@ export default function BreweryList() {
                     {item.name}
                   </p>
                 </Link>
+                {wishList.some((el) => el.id === item.id) ? (
+                  <div className="item-description">
+                    <p className="sm-description">This was been added</p>
+                    <button
+                      className="btn-delete"
+                      onClick={() => {
+                        onClickDelete(item);
+                      }}
+                    >
+                      Delete from Wishlist
+                    </button>
+                  </div>
+                ) : (
+                  <div className="item-description">
+                    <p className="sm-description">Not yet added</p>
+                    <button
+                      className="btn-add"
+                      onClick={() => {
+                        onClickAdd(item);
+                      }}
+                    >
+                      Add to Wishlist
+                    </button>
+                  </div>
+                )}
               </div>
             ))}
         </div>

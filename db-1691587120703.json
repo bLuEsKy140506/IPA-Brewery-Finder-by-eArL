@@ -125,24 +125,6 @@
       "website_url": "http://www.blueearlbrewing.com",
       "state": "Delaware",
       "street": "210 Artisan Dr"
-    },
-    {
-      "id": "add7f978-942e-4d56-b209-c80837a51d69",
-      "name": "18th Street Brewery",
-      "brewery_type": "micro",
-      "address_1": "5417 Oakley Ave",
-      "address_2": null,
-      "address_3": null,
-      "city": "Hammond",
-      "state_province": "Indiana",
-      "postal_code": "46320-1817",
-      "country": "United States",
-      "longitude": "-87.517422",
-      "latitude": "41.61556796",
-      "phone": null,
-      "website_url": null,
-      "state": "Indiana",
-      "street": "5417 Oakley Ave"
     }
   ]
 }
