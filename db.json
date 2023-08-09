@@ -251,6 +251,24 @@
       "website_url": "http://www.agales.com",
       "state": "Oregon",
       "street": "31115 W Crossroads Ln"
+    },
+    {
+      "id": "a7928f72-0201-4c7e-bb72-a83016945a2e",
+      "name": "Boston Beer Co - DBA Samuel Adams Brewing Co",
+      "brewery_type": "regional",
+      "address_1": "1625 Central Pkwy",
+      "address_2": null,
+      "address_3": null,
+      "city": "Cincinnati",
+      "state_province": "Ohio",
+      "postal_code": "45214-2423",
+      "country": "United States",
+      "longitude": "-84.5207651",
+      "latitude": "39.11257",
+      "phone": "6173685000",
+      "website_url": "http://www.samueladams.com",
+      "state": "Ohio",
+      "street": "1625 Central Pkwy"
     }
   ]
 }

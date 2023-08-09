@@ -25,6 +25,7 @@ export default function BreweryList() {
 
   const dispatch = useDispatch();
 
+  //generate a list in which the keyword string is present of item name
   useEffect(() => {
     axios
       .get(
@@ -43,6 +44,7 @@ export default function BreweryList() {
       });
   }, [page, searchField]);
 
+  //generate a default list from the API
   useEffect(() => {
     if (searchField === "") {
       axios
@@ -60,21 +62,25 @@ export default function BreweryList() {
       });
   }, [page, searchField]);
 
+  //fetch the updated value in the API server
   useEffect(() => {
     dispatch(fetchBrewery());
   }, []);
 
+  //search function
   const onSearchChange = (event) => {
     const searchFieldString = event.target.value.toLocaleLowerCase();
     setSearchField(searchFieldString);
     setPage(1);
   };
 
+  //add to the wishlist -- redux store
   const onClickAdd = (item) => {
     // console.log(item);
     dispatch(addBrewery(item));
   };
 
+  //delete to the wishlist -- redux store
   const onClickDelete = (item) => {
     dispatch(deleteBrewery(item.id));
   };
@@ -125,6 +131,7 @@ export default function BreweryList() {
                 )}
               </div>
             ))}
+
           {searchField !== "" &&
             breweryListsearch.map((item) => (
               <div className="item-container" key={item.id}>
