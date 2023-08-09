@@ -1,6 +1,13 @@
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+
+import {
+  addBrewery,
+  deleteBrewery,
+  fetchBrewery,
+} from "../../store/reducers/brewery";
 
 import SearchBox from "../../components/search-box/search-box.component";
 
@@ -14,6 +21,11 @@ export default function BreweryList() {
 
   const [totalPage, setTotalPage] = useState(1);
 
+  const wishList = useSelector((state) => state.brewery);
+
+  const dispatch = useDispatch();
+
+  //generate a list in which the keyword string is present of item name
   useEffect(() => {
     axios
       .get(
@@ -32,6 +44,7 @@ export default function BreweryList() {
       });
   }, [page, searchField]);
 
+  //generate a default list from the API
   useEffect(() => {
     if (searchField === "") {
       axios
@@ -49,21 +62,39 @@ export default function BreweryList() {
       });
   }, [page, searchField]);
 
+  //fetch the updated value in the API server
+  useEffect(() => {
+    dispatch(fetchBrewery());
+  }, []);
+
+  //search function
   const onSearchChange = (event) => {
     const searchFieldString = event.target.value.toLocaleLowerCase();
     setSearchField(searchFieldString);
     setPage(1);
   };
 
+  //add to the wishlist -- redux store
+  const onClickAdd = (item) => {
+    // console.log(item);
+    dispatch(addBrewery(item));
+  };
+
+  //delete to the wishlist -- redux store
+  const onClickDelete = (item) => {
+    dispatch(deleteBrewery(item.id));
+  };
+
   return (
     <>
       <div className="main-container">
-        <h1 className="main-heading">Brewery Finder App</h1>
+        <h1 className="main-heading">🔎Brewery Finder App</h1>
         <SearchBox
           className="search-box"
           onChangeHandler={onSearchChange}
           placeholder="search brewery name"
         />
+
         <div className="list-container">
           {searchField === "" &&
             breweryList.map((item) => (
@@ -73,16 +104,71 @@ export default function BreweryList() {
                     {item.name}
                   </p>
                 </Link>
+                {wishList.some((el) => el.id === item.id) ? (
+                  <div className="item-description">
+                    <p className="sm-description">This was been added</p>
+                    <button
+                      className="btn-delete"
+                      onClick={() => {
+                        onClickDelete(item);
+                      }}
+                    >
+                      Delete from Wishlist
+                    </button>
+                  </div>
+                ) : (
+                  <div className="item-description">
+                    <p className="sm-description">Not yet added</p>
+                    <button
+                      className="btn-add"
+                      onClick={() => {
+                        onClickAdd(item);
+                      }}
+                    >
+                      Add to Wishlist
+                    </button>
+                  </div>
+                )}
               </div>
             ))}
+
           {searchField !== "" &&
             breweryListsearch.map((item) => (
               <div className="item-container" key={item.id}>
                 <Link to={`/brewery/${item.id}`}>
-                  <p className="item-name badge2" value={item.brewery_type}>
+                  <p
+                    className="item-name badge2"
+                    value={item.brewery_type}
+                    key={item.id}
+                  >
                     {item.name}
                   </p>
                 </Link>
+                {wishList.some((el) => el.id === item.id) ? (
+                  <div className="item-description">
+                    <p className="sm-description">This was been added</p>
+                    <button
+                      className="btn-delete"
+                      onClick={() => {
+                        onClickDelete(item);
+                      }}
+                    >
+                      Delete from Wishlist
+                    </button>
+                  </div>
+                ) : (
+                  <div className="item-description">
+                    <p className="sm-description">Not yet added</p>
+                    <button
+                      className="btn-add"
+                      onClick={() => {
+                        onClickAdd(item);
+                      }}
+                    >
+                      Add to Wishlist
+                    </button>
+                  </div>
+                )}
               </div>
             ))}
         </div>

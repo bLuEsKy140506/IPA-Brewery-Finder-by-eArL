@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Link, Outlet } from "react-router-dom";
 import { useState } from "react";
 import logo from "../../assets/logo2.jpg";
 import burgerNav from "../../assets/burgerNav.svg";
@@ -36,6 +36,9 @@ export default function RouteLayout() {
           >
             <div className="flex-row header-nav-signup">
               <p className="sign-up">Welcome Back! eArL</p>
+              <NavLink to="/brewery/wishlist" className="sign-up">
+                My Wishlist!
+              </NavLink>
 
               {/* <NavLink to="about" className="sign-up">
                 About

@@ -9,11 +9,4 @@ const SearchBox = ({ className, placeholder, onChangeHandler }) => (
   />
 );
 
-// class SearchBox extends Component {
-//   render() {
-//     return (
-//
-//   }
-// }
-
 export default SearchBox;

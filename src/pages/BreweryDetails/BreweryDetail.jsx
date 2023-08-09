@@ -1,11 +1,27 @@
 import { useLoaderData } from "react-router-dom";
 import { useState, useCallback } from "react";
+import { Link } from "react-router-dom";
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
+import { useSelector, useDispatch } from "react-redux";
+import { addBrewery, deleteBrewery } from "../../store/reducers/brewery";
 
 import "./BreweryDetail.css";
 
 export default function BreweryDetail() {
   const breweryDetails = useLoaderData();
+
+  const wishList = useSelector((state) => state.brewery);
+
+  const dispatch = useDispatch();
+
+  const onClickAdd = (item) => {
+    dispatch(addBrewery(item));
+  };
+
+  const onClickDelete = (item) => {
+    dispatch(deleteBrewery(item.id));
+  };
+
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: "AIzaSyAOsq2FkcHvMEoyIwcHyvLLjvMFphVK2QQ",
@@ -37,7 +53,10 @@ export default function BreweryDetail() {
 
   return (
     <>
-      <div className="details-main-container">
+      <div className="details-main-container" key={breweryDetails.id}>
+        <Link to={`/`} className="link-back">
+          <p>👈 Back to Brewery List</p>
+        </Link>
         <div className="badge-container">
           <h2 className="item-title badge" value={breweryDetails.brewery_type}>
             {breweryDetails.name}
@@ -56,16 +75,52 @@ export default function BreweryDetail() {
 
           <p>
             {/* <span className="span-description">OFFICIAL WEBSITE: </span>{" "} */}
-            <a href={breweryDetails.website_url}>
+            <a href={breweryDetails.website_url} target="_blank">
               <span className="website-url">{breweryDetails.website_url}</span>
             </a>
           </p>
         </div>
-        <iframe
-          src={breweryDetails.website_url}
-          height="550"
-          width="355px"
-        ></iframe>
+        {breweryDetails.website_url !== null ? (
+          <iframe
+            src={breweryDetails.website_url}
+            height="550"
+            width="355px"
+          ></iframe>
+        ) : (
+          <div
+            style={{
+              fontStyle: "italic",
+            }}
+          >
+            THIS BREWERY STORE HAS NO WEBSITE OR ONLINE LINK
+          </div>
+        )}
+
+        {wishList.some((el) => el.id === breweryDetails.id) ? (
+          <div className="item-description badge-container">
+            <p className="sm-description">This was been added</p>
+            <button
+              className="btn-delete"
+              onClick={() => {
+                onClickDelete(breweryDetails);
+              }}
+            >
+              Delete from Wishlist
+            </button>
+          </div>
+        ) : (
+          <div className="item-description badge-container">
+            <p className="sm-description">Not yet added</p>
+            <button
+              className="btn-add"
+              onClick={() => {
+                onClickAdd(breweryDetails);
+              }}
+            >
+              Add to Wishlist
+            </button>
+          </div>
+        )}
 
         <p>
           <a

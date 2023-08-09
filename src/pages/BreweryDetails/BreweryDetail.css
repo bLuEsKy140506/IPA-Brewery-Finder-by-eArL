@@ -56,3 +56,11 @@
 .sm-description {
   color: white;
 }
+
+.link-back {
+  position: absolute;
+  color: black;
+  font-weight: 600;
+  text-align: start;
+  left: 40px;
+}
