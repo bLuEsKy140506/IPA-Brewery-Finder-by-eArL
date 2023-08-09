@@ -39,3 +39,30 @@ three versions of the app in this project.</p>
 > ✅ brewery-mapping, which integrates Google Maps into the brewery details page
 
 > ✅ initial-design2, which creates the initial web app design
+
+<h3>Prepare version 1.2 with the following features:</h3>
+
+> ✅ wishlist, which shows the wishlist page
+
+> ✅ wishlist-functionality, which allows users to add a brewery to or remove it from the wishlist
+
+> ✅ final-design, which finalizes the web app design
+
+<h2>HOW TO RUN THIS APP IN DEV</h2>
+<h3>I recommend to have 3 or 4 terminals</h3>
+
+<h4>FOR INITIAL AND FUTURE SETUP:</h4>
+
+> npm install
+
+<h4>FOR SERVER:</h4>
+
+> npm run server
+
+<h4>FOR FRONTEND DEV:</h4>
+
+> npm run dev
+
+<h4>GIT (Optional)</h4>
+
+> git commands🤞
