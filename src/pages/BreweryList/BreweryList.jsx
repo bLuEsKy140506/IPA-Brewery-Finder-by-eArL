@@ -1,5 +1,4 @@
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -10,7 +9,7 @@ import {
 } from "../../store/reducers/brewery";
 
 import SearchBox from "../../components/search-box/search-box.component";
-
+import ListDisplay from "./ListDisplayer/ListDisplayer";
 import "./BreweryList.css";
 
 export default function BreweryList() {
@@ -96,81 +95,13 @@ export default function BreweryList() {
         />
 
         <div className="list-container">
-          {searchField === "" &&
-            breweryList.map((item) => (
-              <div className="item-container" key={item.id}>
-                <Link to={`/brewery/${item.id}`}>
-                  <p className="item-name badge2" value={item.brewery_type}>
-                    {item.name}
-                  </p>
-                </Link>
-                {wishList.some((el) => el.id === item.id) ? (
-                  <div className="item-description">
-                    <p className="sm-description">This was been added</p>
-                    <button
-                      className="btn-delete"
-                      onClick={() => {
-                        onClickDelete(item);
-                      }}
-                    >
-                      Delete from Wishlist
-                    </button>
-                  </div>
-                ) : (
-                  <div className="item-description">
-                    <p className="sm-description">Not yet added</p>
-                    <button
-                      className="btn-add"
-                      onClick={() => {
-                        onClickAdd(item);
-                      }}
-                    >
-                      Add to Wishlist
-                    </button>
-                  </div>
-                )}
-              </div>
-            ))}
-
-          {searchField !== "" &&
-            breweryListsearch.map((item) => (
-              <div className="item-container" key={item.id}>
-                <Link to={`/brewery/${item.id}`}>
-                  <p
-                    className="item-name badge2"
-                    value={item.brewery_type}
-                    key={item.id}
-                  >
-                    {item.name}
-                  </p>
-                </Link>
-                {wishList.some((el) => el.id === item.id) ? (
-                  <div className="item-description">
-                    <p className="sm-description">This was been added</p>
-                    <button
-                      className="btn-delete"
-                      onClick={() => {
-                        onClickDelete(item);
-                      }}
-                    >
-                      Delete from Wishlist
-                    </button>
-                  </div>
-                ) : (
-                  <div className="item-description">
-                    <p className="sm-description">Not yet added</p>
-                    <button
-                      className="btn-add"
-                      onClick={() => {
-                        onClickAdd(item);
-                      }}
-                    >
-                      Add to Wishlist
-                    </button>
-                  </div>
-                )}
-              </div>
-            ))}
+          {searchField === "" && (
+            <ListDisplay items={breweryList} wishList={wishList} />
+          )}
+          {console.log(searchField !== "")}
+          {searchField !== "" && (
+            <ListDisplay items={breweryListsearch} wishList={wishList} />
+          )}
         </div>
         <div className="api-pagination">
           <button
