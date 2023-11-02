@@ -1,5 +1,5 @@
 # IPA-6 🔍Brewery Finder
-
+LIVE view: [https://brewery-finder-by-earl.vercel.app/](https://brewery-finder-by-earl.vercel.app/)
 <h2>Goal</h2>
 <pre>
 
