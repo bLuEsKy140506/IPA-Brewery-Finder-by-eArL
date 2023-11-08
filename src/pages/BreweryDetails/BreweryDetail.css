@@ -1,5 +1,6 @@
-/* .details-main-container {
-} */
+.details-main-container {
+  padding-top: 5rem;
+}
 
 .description-brewery {
   display: flex;
@@ -63,4 +64,5 @@
   font-weight: 600;
   text-align: start;
   left: 40px;
+  padding-top: 3rem;
 }

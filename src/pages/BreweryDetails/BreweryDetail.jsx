@@ -53,10 +53,10 @@ export default function BreweryDetail() {
 
   return (
     <>
+      <Link to={`/`} className="link-back">
+        <p>👈 Back to Brewery List</p>
+      </Link>
       <div className="details-main-container" key={breweryDetails.id}>
-        <Link to={`/`} className="link-back">
-          <p>👈 Back to Brewery List</p>
-        </Link>
         <div className="badge-container">
           <h2 className="item-title badge" value={breweryDetails.brewery_type}>
             {breweryDetails.name}
