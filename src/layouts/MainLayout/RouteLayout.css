@@ -161,6 +161,9 @@
     border: 2px solid #0266ff;
   }
 
+  .header-nav-logo {
+    width: 100vw;
+  }
   .header-nav-lvl2,
   .header-nav-link {
     flex-direction: column;
@@ -169,7 +172,8 @@
   }
 
   .header-nav-signup {
-    justify-content: flex-start;
+    align-items: end;
+    flex-direction: column;
   }
 
   .header-nav-lvl2 {
